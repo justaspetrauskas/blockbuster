@@ -1,0 +1,21 @@
+.content-container {
+  @apply container mx-auto;
+}
+
+.content-container--small {
+  @apply max-w-screen-md;
+}
+
+.content-container--medium {
+  @apply max-w-screen-lg;
+}
+
+.content-container--large {
+  @apply max-w-screen-xl px-1;
+}
+.content-container--xlarge {
+  @apply max-w-screen-2xl px-2;
+}
+.content-container--screen {
+  @apply w-[calc(100vw*0.90)] md:w-[calc(100vw*0.8)];
+}

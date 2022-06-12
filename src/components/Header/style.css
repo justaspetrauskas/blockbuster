@@ -1,0 +1,79 @@
+.header-wrapper {
+  @apply bg-white
+  relative 
+  md:fixed 
+  top-0 w-full z-[90]
+  border
+  border-b-blockbusterBlue/10
+text-blockbusterBlue 
+text-base
+   py-6
+   shadow-sm;
+}
+
+.header-brand {
+  @apply md:text-xl text-sm uppercase font-Alata font-bold;
+}
+
+.header-navigation {
+  @apply flex flex-row gap-3 flex-nowrap;
+}
+
+.header-link {
+  @apply border flex-1 rounded-full px-4 py-1 duration-300
+  font-light  
+  hover:text-white hover:bg-blockbusterBlue
+  active:text-white active:bg-blockbusterBlue;
+}
+
+.header-navigation--extra {
+  @apply flex flex-row flex-nowrap ml-3 px-3 border-l border-l-blockbusterBlue/30;
+}
+
+.wishlist-link {
+  @apply flex flex-row flex-nowrap items-center justify-center gap-2 relative;
+}
+.wishlist-link svg {
+  height: 1.2rem;
+  width: 1.2rem;
+}
+/* .wishlist-link:hover .wishlist-counter {
+  @apply bg-white text-blockbusterBlue;
+} */
+.wishlist-counter {
+  @apply absolute -top-2 -right-2 rounded-full bg-white border border-blockbusterBlue
+  w-6 h-6 flex items-center justify-center  text-blockbusterBlue;
+}
+
+.hamburger-menu {
+  @apply block 
+    md:hidden 
+    overflow-hidden
+    space-y-2;
+}
+.burger-slice {
+  @apply block  h-[0.12rem] rounded-lg bg-blockbusterBlue w-8 duration-300;
+}
+
+.hamburger-menu:hover .burger-slice:first-child {
+  @apply translate-x-4 w-6 duration-300;
+}
+
+.hamburger-menu:hover .burger-slice:last-child {
+  @apply -translate-x-4 duration-300;
+}
+
+.mobile-menu {
+  @apply absolute w-full h-0 top-[100%] left-0 bg-white transition duration-300;
+}
+
+.mobile-menu--open {
+  @apply h-screen duration-300;
+}
+
+.mobile-navigation {
+  @apply flex flex-col gap-3 justify-center items-center -translate-y-[100%];
+}
+.mobile-link {
+  @apply flex items-center justify-center min-w-[8rem];
+}

@@ -1,0 +1,9 @@
+.infopill {
+  @apply font-medium text-inherit;
+}
+.infopill-title {
+  @apply font-semibold mr-1;
+}
+.infopill-content {
+  @apply font-normal mr-1;
+}

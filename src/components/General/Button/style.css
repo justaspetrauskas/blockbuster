@@ -1,0 +1,35 @@
+.blockbuster-button {
+  @apply flex items-center
+     rounded-full   border 
+     cursor-pointer
+     backdrop-blur-md bg-white/10
+     whitespace-nowrap
+   text-blockbusterBlue border-blockbusterBlue/30 
+   hover:border-blockbusterBlue duration-300
+   text-[0.25rem]  md:text-xs lg:text-sm;
+}
+/* .blockbuster-button:hover svg {
+  @apply;
+} */
+
+.blockbuster-button--small {
+  @apply px-2 py-[0.25rem];
+}
+.blockbuster-button--medium {
+  @apply px-2 py-0.5;
+}
+
+.blockbuster-button--large {
+  @apply px-4 py-1.5;
+}
+
+.blockbuster-button--icon {
+  @apply md:p-2 p-1 mr-2 hidden md:block;
+}
+.blockbuster-button--icon svg {
+  @apply fill-current md:scale-150 md:translate-y-px;
+}
+
+.blockbuster-button--title {
+  @apply text-inherit font-semibold uppercase;
+}

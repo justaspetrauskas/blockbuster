@@ -1,0 +1,94 @@
+.program_card {
+  @apply max-w-sm relative bg-transparent 
+   flex flex-col justify-between sm:py-2 py-1 
+   text-blockbusterBlue cursor-pointer;
+}
+
+/* image container */
+.program_card-image-wrapper {
+  @apply relative w-full rounded-md 
+  overflow-hidden delay-300 duration-500
+  lg:max-h-[18rem] md:max-h-[14rem] h-auto;
+}
+
+.program_card:hover .program_card-image-wrapper {
+  @apply shadow-2xl scale-110 -translate-y-5
+    z-[60]
+    duration-500;
+}
+.program_card:hover .program_card-description {
+  @apply delay-300 duration-500 visible w-[200%];
+}
+
+.image-overlay {
+  @apply absolute top-0 left-0 w-full h-full
+  bg-gradient-to-t from-blockbusterPurple/40 to-blockbusterBlue/30 backdrop-blur-[1px]
+  flex items-center justify-center transition-opacity duration-300 opacity-0 hover:opacity-100;
+}
+
+.blockbuster-button {
+  @apply duration-500 backdrop-blur-sm bg-blockbusterYellow px-2 py-1 rounded-md text-sm;
+}
+
+.image-overlay:hover button {
+  @apply -translate-y-5 duration-500;
+}
+
+/* icon */
+
+.icon-wrapper {
+  @apply absolute transform top-0 left-0 flex p-1 sm:p-2 
+  /* rounded-tl-sm */
+  rounded-br-xl
+  z-40
+  backdrop-blur-sm
+   bg-white/30 
+  transition-all duration-200 cursor-pointer;
+}
+
+/* description card */
+
+.program_card-description {
+  @apply absolute z-50 bg-white top-0 duration-200 w-0 pl-6 pr-2 py-2 align-middle
+   h-full max-h-[10rem] sm:max-h-[16rem]
+   rounded-r-sm text-sm
+   overflow-hidden
+   left-[100%]
+   invisible;
+}
+
+/* .icon-like svg {
+  height: 1.5rem;
+  width: 1.5rem;
+  @apply fill-blockbusterYellow duration-300 ease-linear;
+}
+
+.icon-like svg:hover {
+  @apply fill-blockbusterYellow duration-300 ease-linear;
+} */
+
+/* content */
+
+.program_card-content {
+  @apply text-center 
+  mt-2
+  flex flex-col items-center
+  relative py-1 px-2;
+}
+
+.program_card-content--title {
+  @apply font-medium w-full;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.program_card-button {
+  @apply bg-blockbusterYellow
+  
+  text-sm font-medium text-white
+  px-3 py-1
+  rounded-2xl;
+}
+.program_card-button:hover {
+  @apply shadow-sm;
+}

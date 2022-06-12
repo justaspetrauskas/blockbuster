@@ -1,0 +1,23 @@
+.footer-wrapper {
+  @apply bg-white
+    relative w-full z-[99]
+    border
+    border-t-blockbusterBlue/10
+  text-blockbusterBlue 
+  text-base
+     py-6;
+}
+.footer-info {
+  @apply flex flex-col items-center justify-center;
+}
+.footer-info svg {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+.footer-info--social-links {
+  @apply flex flex-row flex-nowrap gap-3 mt-2 justify-center;
+}
+.footer-info--social-links a {
+  @apply p-2 border rounded-lg
+  hover:bg-blockbusterBlue hover:text-white duration-500;
+}

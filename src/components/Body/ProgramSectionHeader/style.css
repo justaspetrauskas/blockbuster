@@ -1,0 +1,38 @@
+.section_header-wrapper {
+  @apply w-full py-10
+  relative  font-Alata
+  flex flex-row items-center justify-between lg:px-4;
+}
+
+.section_headear-decoration {
+  @apply border-t-[0.01rem]
+   border-blockbusterRose/70 -translate-y-[50%] w-full;
+}
+
+.pill {
+  @apply border
+  border-blockbusterRose/40 
+  bg-white
+  text-blockbusterPurple
+  rounded-full
+  duration-300;
+}
+
+.section_header-title {
+  @apply mx-auto 
+  text-2xl
+  capitalize  inline-block px-8 py-3;
+}
+
+.section_header-link {
+  @apply capitalize text-sm whitespace-nowrap
+  flex flex-row items-center gap-1
+  px-4 py-2;
+}
+
+.section_header-link.pill:hover {
+  @apply border-blockbusterRose 
+  bg-blockbusterRose
+  text-white
+  duration-300;
+}

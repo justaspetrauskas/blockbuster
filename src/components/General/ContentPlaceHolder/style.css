@@ -1,0 +1,37 @@
+.placeholder-image {
+  @apply overflow-hidden 
+  relative bg-blockbusterRose/30 flex flex-col 
+  justify-center items-center
+
+  py-6
+  h-full min-h-[10rem] sm:min-h-[16rem]
+  lg:max-h-[18rem] md:max-h-[14rem] h-full;
+}
+
+.placeholder-text {
+  @apply text-blockbusterBlue/30 font-bold opacity-80;
+}
+
+.placeholder-image svg {
+  height: 6rem;
+  width: 6rem;
+  @apply fill-blockbusterBlue/30;
+}
+
+/* [data-placeholder]::after {
+  content: " ";
+  box-shadow: 0 0 50px 9px rgba(254, 254, 254, 0.8);
+  position: absolute;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  animation: load 1s infinite;
+}
+@keyframes load {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 150%;
+  }
+} */

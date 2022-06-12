@@ -1,0 +1,40 @@
+.program-essentials {
+  @apply flex flex-row  items-center absolute top-0 mt-0 left-0 w-full h-heroSmall
+   /* md:h-heroMedium lg:h-heroLarge  */
+   h-full
+   px-2 md:px-0;
+}
+
+.program-essentials--top-row {
+  @apply flex flex-row justify-between 
+   h-full
+   md:px-4
+   md:gap-40;
+}
+.program-essentials--summary {
+  @apply flex flex-col justify-center max-w-md;
+}
+.program-essentials--summary-title {
+  @apply text-white md:py-4 py-0;
+}
+.program-release-year {
+  @apply px-2 text-xs md:text-xl;
+}
+.program-title {
+  @apply text-base md:text-4xl lg:text-7xl font-bold uppercase inline;
+}
+
+.program-essentials--image {
+  @apply rounded overflow-hidden shadow-lg 
+  shadow-blockbusterYellow/50 
+  w-32 sm:w-48 md:w-auto h-full 
+  bg-cover;
+}
+
+.program-essentials--row {
+  @apply flex flex-row flex-nowrap py-2 mt-2 gap-[0.1rem] sm:gap-1;
+}
+
+.link {
+  @apply hover:font-semibold;
+}
