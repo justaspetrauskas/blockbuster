@@ -5,6 +5,7 @@ import { blockbusterApi } from "../services/programs";
 import wishlistReducer from "../slices/wishlistSlice";
 import moviesByGenreReducer from "../slices/moviesByGenreSlice";
 import lazyLoadSliceReducer from "../slices/lazyLoadSlice";
+import movieGenreReducer from "../slices/genresSlice";
 
 export const store = configureStore({
   reducer: {
@@ -13,6 +14,8 @@ export const store = configureStore({
     wishlist: wishlistReducer,
     moviesByGenre: moviesByGenreReducer,
     lazyLoad: lazyLoadSliceReducer,
+    initialGenres: movieGenreReducer,
+    filteredGenres: movieGenreReducer,
   },
   // Adding the api middleware enables caching, invalidation, polling,
   middleware: (getDefaultMiddleware) =>
@@ -22,9 +25,10 @@ export const store = configureStore({
 export type RootState = ReturnType<typeof store.getState>;
 export const selectWishlist = (state: RootState) => state.wishlist.wishlist;
 export const selectLazyLoad = (state: RootState) => state.lazyLoad.load;
-
-// export const selectMoviesByGenre = (state: RootState) =>
-//   state.moviesByGenre.moviesByGenre;
+export const selectInitialGenres = (state: RootState) =>
+  state.initialGenres.initialGenres;
+export const selectFilteredGenres = (state: RootState) =>
+  state.filteredGenres.filteredGenres;
 
 // optional, but required for refetchOnFocus/refetchOnReconnect behaviors
 setupListeners(store.dispatch);

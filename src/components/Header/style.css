@@ -2,8 +2,7 @@
   @apply bg-white
   relative 
   md:fixed 
-  top-0 w-full z-[90]
-  border
+  top-0 w-full z-[99]
   border-b-blockbusterBlue/10
 text-blockbusterBlue 
 text-base
@@ -47,28 +46,24 @@ text-base
 
 .hamburger-menu {
   @apply block 
-    md:hidden 
+    /* md:hidden  */
+    space-y-1
     overflow-hidden
-    space-y-2;
+    px-1 py-1;
 }
 .burger-slice {
-  @apply block  h-[0.12rem] rounded-lg bg-blockbusterBlue w-8 duration-300;
+  @apply block opacity-100  h-[0.12rem]  bg-blockbusterBlue w-[1.6rem] duration-300 rounded-[10px];
+  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
 
-.hamburger-menu:hover .burger-slice:first-child {
-  @apply translate-x-4 w-6 duration-300;
+.hamburger-open .burger-slice:nth-child(1) {
+  @apply delay-200 translate-y-[0.4rem] rotate-45;
 }
-
-.hamburger-menu:hover .burger-slice:last-child {
-  @apply -translate-x-4 duration-300;
+.hamburger-open .burger-slice:nth-child(3) {
+  @apply delay-200 -translate-y-[0.4rem] -rotate-45;
 }
-
-.mobile-menu {
-  @apply absolute w-full h-0 top-[100%] left-0 bg-white transition duration-300;
-}
-
-.mobile-menu--open {
-  @apply h-screen duration-300;
+.hamburger-open .burger-slice:nth-child(2) {
+  @apply -translate-x-[125%] duration-300;
 }
 
 .mobile-navigation {

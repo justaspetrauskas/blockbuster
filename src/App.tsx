@@ -18,7 +18,7 @@ import ProgramsByGenre from "./pages/GenrePage/GenrePage";
 
 import ContentWrapper from "./components/General/ContentWrapper/ContentWrapper";
 
-import HeaderComponent from "./components/Header/Header";
+import HeaderComponent from "./components/Header/HeaderComponent";
 import FooterComponent from "./components/Footer/Footer";
 
 const LazyWishlist = lazy(() => import("./pages/Wishlist/Wishlist"));

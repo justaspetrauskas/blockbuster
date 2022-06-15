@@ -1,6 +1,6 @@
 .footer-wrapper {
   @apply bg-white
-    relative w-full z-[99]
+    relative w-full
     border
     border-t-blockbusterBlue/10
   text-blockbusterBlue 

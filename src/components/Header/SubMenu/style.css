@@ -1,0 +1,68 @@
+.submenu-wrapper {
+  @apply absolute top-0 duration-300 w-[calc(100%-1rem)] h-full
+   bg-white rounded-l-lg overflow-hidden shadow-lg
+   overflow-y-auto;
+
+  transition: 0.4s cubic-bezier(0.2, -0.2, -0.32, 0.6);
+}
+.submenu-title {
+  @apply py-2 flex  flex-nowrap items-center 
+   w-full bg-blockbusterBlue
+   text-blockbusterYellow uppercase duration-300;
+}
+
+.submenu-title button {
+  @apply cursor-pointer z-10;
+}
+.submenu-title button > svg {
+  @apply duration-300 cursor-pointer origin-center;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.submenu-title:hover button > svg {
+  @apply scale-125;
+}
+/* @keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateX(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+} */
+.submenu-title--open > button {
+  @apply duration-300 rotate-180;
+  transition: 0.6s cubic-bezier(0.68, -0.8, 0.32, 1.6);
+}
+
+.submenu-title--closed > button {
+  @apply rotate-0 duration-300;
+  transition: 0.1s cubic-bezier(0.68, -0.8, 0.32, 1.6);
+}
+
+.submenu-link {
+  @apply text-center overflow-hidden relative w-full
+   py-1.5 duration-300 rounded-l-lg capitalize;
+  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+.submenu-link:hover {
+  @apply bg-blockbusterYellow/80 duration-300 rounded-l-lg  ml-4;
+}
+.submenu-link > i {
+  @apply absolute -left-[100%] top-0 h-full 
+  flex flex-col justify-center
+  origin-center opacity-0;
+  transition: 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+.submenu-link:hover > i {
+  @apply left-5 opacity-100;
+  transition: 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.submenu-link > span {
+  transition: 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}

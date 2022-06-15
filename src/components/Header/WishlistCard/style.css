@@ -1,0 +1,43 @@
+.wishlist-card--wrapper {
+  @apply flex flex-row w-full py-2.5 pl-4 
+  overflow-hidden relative capitalize duration-300
+  border-b items-center justify-start;
+  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+.wishlist-card--wrapper:hover {
+  @apply bg-blockbusterYellow/80 rounded-l-lg  ml-4;
+}
+.wishlist-card--image {
+  @apply w-20 rounded-lg overflow-hidden h-full;
+}
+.wishlist-card--content {
+  @apply ml-5 h-full flex flex-col space-y-6 justify-between items-start;
+}
+
+/* .sidebar-link-wrapper {
+    @apply w-full border border-blockbusterYellow  px-4 py-1 rounded-lg  cursor-pointer duration-300
+     text-blockbusterBlue
+     flex flex-row items-center justify-between bg-blockbusterYellow/60;
+    transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  } */
+
+.wishlist-card--link-button {
+  @apply border border-blockbusterYellow  px-3 py-0.5 rounded-lg  cursor-pointer duration-300
+  text-blockbusterBlue text-sm
+  flex flex-row items-center justify-between bg-blockbusterYellow/60;
+  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+.wishlist-card--wrapper:hover .wishlist-card--link-button {
+  @apply border border-blockbusterBlue  px-3 py-0.5 rounded-lg  cursor-pointer duration-300
+    text-blockbusterYellow
+    flex flex-row items-center justify-between bg-blockbusterBlue shadow-lg
+     shadow-blockbusterBlue/10;
+}
+/* .submenu-link {
+    @apply text-center overflow-hidden relative w-full
+     py-1.5 duration-300 rounded-l-lg capitalize;
+    transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  }
+  .submenu-link:hover {
+    @apply bg-blockbusterYellow/80 duration-300 rounded-l-lg  ml-4;
+  } */

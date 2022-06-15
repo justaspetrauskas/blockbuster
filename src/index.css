@@ -6,6 +6,12 @@
 
 body {
   margin: 0;
-  background-color: #fafeff;
+  /* background-color: #fafeff; */
+  background: rgba(250, 254, 255, 1);
+  /* background: linear-gradient(
+    135deg,
+    rgba(10, 10, 39, 0.9) -400%,
+    rgba(250, 254, 255, 1) 68%
+  ); */
   @apply font-Lexend;
 }
