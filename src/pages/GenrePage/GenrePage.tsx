@@ -7,6 +7,7 @@ import BottomObserver from "../../components/General/BottomObserver/BottomObserv
 import Button from "../../components/General/Button/Button";
 import ContentWrapper from "../../components/General/ContentWrapper/ContentWrapper";
 import GridWrapper from "../../components/General/GridWrapper/GridWrapper";
+import Loader from "../../components/General/Loader/Loader";
 import { useGetMoviesByGenreQuery } from "../../redux/services/programs";
 import { triggerLazyLoad } from "../../redux/slices/lazyLoadSlice";
 import { selectLazyLoad } from "../../redux/store/store";
@@ -62,9 +63,9 @@ const GenrePage = () => {
               })}
             </LazyGridWrapper>
           </Suspense>
-          {isLoading && (
-            <div className="h-5 my-14 w-full">
-              <h1>loading</h1>
+          {!isLoading && (
+            <div className=" my-14 h-full w-full">
+              <Loader />
             </div>
           )}
         </div>

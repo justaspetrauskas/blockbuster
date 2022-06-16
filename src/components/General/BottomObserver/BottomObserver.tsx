@@ -42,7 +42,7 @@ const BottomObserver = ({
 
   return (
     <div
-      className={`w-full flex justify-center py-4  "min-h-10"`}
+      className={`w-full flex justify-center py-4 absolute left-0 min-h-10"`}
       ref={bottomObserver}
     >
       {children}

@@ -11,7 +11,7 @@
 } */
 
 .blockbuster-button--small {
-  @apply px-2 py-[0.25rem] text-sm;
+  @apply px-2 py-[0.25rem] text-xs;
 }
 .blockbuster-button--medium {
   @apply px-2 py-0.5 text-xs overflow-hidden 
@@ -46,7 +46,7 @@
 }
 
 .blockbuster-button--secondary:hover {
-  @apply bg-blockbusterPurple/80 
-  text-blockbusterYellow duration-300 
+  @apply bg-white
+  text-blockbusterBlue duration-300 
   border border-blockbusterYellow;
 }
