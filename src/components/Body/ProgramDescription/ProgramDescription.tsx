@@ -14,7 +14,7 @@ const ProgramDescription = ({ description }: ProgramDescriptionProps) => {
           <h1 className=" font-Alata text-4xl font-bold border-b inline-block text-blockbusterBlue border-blockbusterBlue">
             Storyline
           </h1>
-          <div className="description-content py-2">{description}</div>
+          <div className="description-content py-2 mt-8">{description}</div>
         </Container>
       </div>
     </Container>

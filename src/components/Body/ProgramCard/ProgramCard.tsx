@@ -7,14 +7,13 @@ import { useDispatch } from "react-redux";
 
 import LikeIcon from "../../General/LikeIcon/LikeIcon";
 import CardImageContainer from "./CardImageContainer";
-import React, { useEffect, useState, forwardRef } from "react";
-import { BiRightArrow } from "react-icons/bi";
+import React, { useState } from "react";
 
 interface ProgramCardProps {
   program: Record<string, any>;
 }
 
-const ProgramCard = forwardRef(({ program }: ProgramCardProps, ref?: any) => {
+const ProgramCard = ({ program }: ProgramCardProps) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -37,7 +36,6 @@ const ProgramCard = forwardRef(({ program }: ProgramCardProps, ref?: any) => {
       onClick={handleNavigate}
       onMouseOver={() => setMouseOverCard(true)}
       onMouseOut={() => setMouseOverCard(false)}
-      ref={ref}
     >
       <div className="program_card-image-wrapper">
         <CardImageContainer
@@ -70,6 +68,6 @@ const ProgramCard = forwardRef(({ program }: ProgramCardProps, ref?: any) => {
       </div>
     </div>
   );
-});
+};
 
 export default ProgramCard;

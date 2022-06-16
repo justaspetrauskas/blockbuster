@@ -1,13 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Button from "../../General/Button/Button";
+import { removeFromWishlist } from "../../../redux/slices/wishlistSlice";
 import "./style.css";
+import { useDispatch } from "react-redux";
 interface WishlistCardProps {
   item: Record<string, any>;
   closeSubmenu: () => void;
 }
 const WishlistCard = ({ item, closeSubmenu }: WishlistCardProps) => {
+  const dispatch = useDispatch();
+
   const handleCloseMenu = () => {
     closeSubmenu();
+  };
+
+  const removeFromTheWishlist = () => {
+    dispatch(removeFromWishlist(item.id));
   };
 
   return (
@@ -20,13 +29,14 @@ const WishlistCard = ({ item, closeSubmenu }: WishlistCardProps) => {
           <h2 className="leading-3">{item.title}</h2>
           <span className="text-xs">{item.releaseYear}</span>
         </div>
-
-        <button
-          className="wishlist-card--link-button"
-          onClick={handleCloseMenu}
-        >
-          <Link to={"movies/" + item.id}>See More</Link>
-        </button>
+        <div className="flex flex-col gap-1">
+          <Button secondary size={"small"} onClick={handleCloseMenu}>
+            <Link to={"movies/" + item.id}>See More</Link>
+          </Button>
+          <Button secondary size={"small"} onClick={removeFromTheWishlist}>
+            Remove from the list
+          </Button>
+        </div>
       </div>
     </div>
   );

@@ -1,15 +1,10 @@
-import React, {
-  useEffect,
-  useState,
-  useRef,
-  useCallback,
-  lazy,
-  Suspense,
-} from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import ProgramCard from "../../components/Body/ProgramCard/ProgramCard";
 import ProgramHero from "../../components/Body/ProgramHero/ProgramHero";
+import BottomObserver from "../../components/General/BottomObserver/BottomObserver";
+import Button from "../../components/General/Button/Button";
 import ContentWrapper from "../../components/General/ContentWrapper/ContentWrapper";
 import GridWrapper from "../../components/General/GridWrapper/GridWrapper";
 import { useGetMoviesByGenreQuery } from "../../redux/services/programs";
@@ -25,7 +20,7 @@ const GenrePage = () => {
   const lazyLoadStatus = useSelector(selectLazyLoad);
   const dispatch = useDispatch();
 
-  const [rangeEnd, setRangeEnd] = useState(20);
+  const [rangeEnd, setRangeEnd] = useState(28);
   const { data, error, isLoading, isFetching } = useGetMoviesByGenreQuery({
     range_end: rangeEnd,
     genre: genre!,
@@ -33,7 +28,7 @@ const GenrePage = () => {
 
   useEffect(() => {
     if (lazyLoadStatus) {
-      setRangeEnd(rangeEnd + 5);
+      setRangeEnd(rangeEnd + 14);
       dispatch(triggerLazyLoad(false));
     }
   }, [lazyLoadStatus]);
@@ -43,6 +38,10 @@ const GenrePage = () => {
       console.log(data);
     }
   }, [isFetching, data]);
+
+  const goToTop = () => {
+    window.scrollTo(0, 0);
+  };
 
   return (
     <section id={`genre--${genre}`} className="md:pt-14">
@@ -56,19 +55,33 @@ const GenrePage = () => {
 
       <ContentWrapper size="screen">
         <div className="pb-24">
-          {/* {isLoading && (
-            <div className="h-5 my-14 w-full">
-              <h1>loading</h1>
-            </div>
-          )} */}
           <Suspense fallback="...loading">
             <LazyGridWrapper>
-              {data?.data.map((program: Record<string, any>, index: number) => {
+              {data?.data.map((program: Record<string, any>) => {
                 return <ProgramCard program={program} key={program.id} />;
               })}
             </LazyGridWrapper>
           </Suspense>
+          {isLoading && (
+            <div className="h-5 my-14 w-full">
+              <h1>loading</h1>
+            </div>
+          )}
         </div>
+        {rangeEnd >= data?.pageCount && (
+          <div className="flex justify-center">
+            <Button secondary size={"large"} onClick={goToTop}>
+              Go To Top
+            </Button>
+          </div>
+        )}
+
+        {data && (
+          <BottomObserver
+            maxItems={data.pageCount}
+            currentlyLoaded={rangeEnd}
+          />
+        )}
       </ContentWrapper>
     </section>
   );

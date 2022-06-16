@@ -11,37 +11,37 @@ import { triggerLazyLoad } from "../../redux/slices/lazyLoadSlice";
 import "./style.css";
 
 const FooterComponent = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  const observer = useRef<any>(null);
-  const cleanOb = () => {
-    if (observer.current) {
-      observer.current.disconnect();
-    }
-  };
-  const bottomObserver = useCallback(
-    (node: any) => {
-      // if (!observer.current) {
-      //   return;
-      // }
-      cleanOb();
-      observer.current = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-          // setRangeEnd((prevRangeEnd) => prevRangeEnd + 5);
-          // cleanOb();
+  // const observer = useRef<any>(null);
+  // const cleanOb = () => {
+  //   if (observer.current) {
+  //     observer.current.disconnect();
+  //   }
+  // };
+  // const bottomObserver = useCallback(
+  //   (node: any) => {
+  //     // if (!observer.current) {
+  //     //   return;
+  //     // }
+  //     cleanOb();
+  //     observer.current = new IntersectionObserver((entries) => {
+  //       if (entries[0].isIntersecting) {
+  //         // setRangeEnd((prevRangeEnd) => prevRangeEnd + 5);
+  //         // cleanOb();
 
-          // trigger loadMore
-          dispatch(triggerLazyLoad(true));
-          console.log("footer is visible");
-        }
-      });
-      if (node) observer.current.observe(node);
-    },
-    [dispatch]
-  );
+  //         // trigger loadMore
+  //         dispatch(triggerLazyLoad(true));
+  //         console.log("footer is visible");
+  //       }
+  //     });
+  //     if (node) observer.current.observe(node);
+  //   },
+  //   [dispatch]
+  // );
 
   return (
-    <div className="footer-wrapper" ref={bottomObserver}>
+    <div className="footer-wrapper">
       <ContentWrapper size="screen">
         <div className="footer-info">
           <div className="flex flex-row flex-nowrap items-center justify-center">

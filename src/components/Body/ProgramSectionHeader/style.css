@@ -1,27 +1,28 @@
 .section_header-wrapper {
-  @apply w-full py-10
-  relative  font-Alata
-  flex flex-row items-center justify-between lg:px-4;
+  @apply w-full py-10 mb-8  text-blockbusterBlue  rounded-lg shadow-sm 
+ font-Alata
+ bg-white overflow-hidden
+  flex flex-row items-center justify-between 
+  relative;
 }
 
 .section_headear-decoration {
-  @apply border-t-[0.01rem]
-   border-blockbusterRose/70 -translate-y-[50%] w-full;
+  @apply border-t-[0.01rem] absolute
+   border-blockbusterBlue -translate-y-[50%] w-full;
 }
 
 .pill {
   @apply border
-  border-blockbusterRose/40 
+  px-6 py-0.5
   bg-white
-  text-blockbusterPurple
-  rounded-full
+  border-blockbusterYellow
+  rounded-xl
   duration-300;
 }
 
 .section_header-title {
-  @apply mx-auto 
-  text-2xl
-  capitalize  inline-block px-8 py-3;
+  @apply text-2xl
+  capitalize px-8 py-3;
 }
 
 .section_header-link {

@@ -1,5 +1,5 @@
 .blockbuster-link {
-  @apply text-center overflow-hidden capitalize rounded-lg;
+  @apply text-center overflow-hidden capitalize;
   transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
 
@@ -8,22 +8,32 @@
 }
 
 .blockbuster-link--primary {
-  @apply relative;
+  @apply relative bg-inherit rounded-lg;
 }
 
 .blockbuster-link--primary:hover {
-  @apply bg-blockbusterLightYellow  ml-4;
+  @apply bg-blockbusterLightYellow translate-x-4;
+}
+
+.blockbuster-link--icon {
+  @apply relative flex items-center flex-row justify-center;
 }
 
 .blockbuster-link--icon > i {
   @apply absolute -left-[100%] top-0 h-full 
     flex flex-col justify-center
-    origin-center opacity-0;
+     opacity-0;
   transition: 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
 .blockbuster-link--icon:hover > i {
-  @apply left-5 opacity-100;
+  @apply left-3 opacity-100;
   transition: 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+.blockbuster-link--secondary {
+  @apply rounded-l;
+}
+.blockbuster-link--medium {
+  @apply w-[8rem] py-1;
 }
 
 .blockbuster-link--fullWidth {

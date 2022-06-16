@@ -36,7 +36,7 @@ const LinkElement = ({
       ].join(" ")}
     >
       {icon && <Icon icon={"arrow"} size={"small"} />}
-      {label && <span>{label || to}</span>}
+      {label ? <span>{label ? label : to}</span> : <span>{to}</span>}
       {children}
     </Link>
   );

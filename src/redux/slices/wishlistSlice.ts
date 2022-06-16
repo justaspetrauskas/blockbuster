@@ -30,10 +30,16 @@ export const wishlistDataSlice = createSlice({
         localStorage.setItem("wishlistArray", jsonArr);
       }
     },
+    removeFromWishlist: (state, action: PayloadAction<string>) => {
+      state.wishlist = state.wishlist.filter(({ id }) => id !== action.payload);
+      const jsonArr = JSON.stringify(state.wishlist);
+      localStorage.setItem("wishlistArray", jsonArr);
+    },
   },
   extraReducers: {},
 });
 
-export const { handleLikeProgram } = wishlistDataSlice.actions;
+export const { handleLikeProgram, removeFromWishlist } =
+  wishlistDataSlice.actions;
 
 export default wishlistDataSlice.reducer;

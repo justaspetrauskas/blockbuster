@@ -19,7 +19,7 @@ export const blockbusterApi = createApi({
       query: (arg) => {
         const { range_end, genre } = arg;
         return {
-          url: `?form=json&range=1-${range_end}&fields=id,title,plprogram$descriptionLocalized,runtime,year,thumbnails&byTags=genre:${genre}&byProgramType=movie&count=true`,
+          url: `?form=json&range=1-${range_end}&fields=id,tags,title,description,plprogram$descriptionLocalized,runtime,year,thumbnails&byTags=genre:${genre}&byProgramType=movie&count=true`,
         };
       },
       transformResponse: (response: {
@@ -29,7 +29,6 @@ export const blockbusterApi = createApi({
       }) => {
         // console.log("Received data", response);
         let pageCount = response.totalResults;
-        console.log(response.entries);
         let data = response.entries.map((movie) => buildFullMovieData(movie));
         return { data, pageCount };
       },
