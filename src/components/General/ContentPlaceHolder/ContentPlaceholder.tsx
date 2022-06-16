@@ -8,7 +8,7 @@ interface ContentPlaceholderProps {
 
 const ContentPlaceholder = ({ image = true }: ContentPlaceholderProps) => {
   return (
-    <div data-placeholder className="placeholder-image ">
+    <div data-placeholder className="placeholder-image max-h-18 h-full">
       {image && <BsImage />}
       <span className="placeholder-text">{image && "No Image..."}</span>
     </div>

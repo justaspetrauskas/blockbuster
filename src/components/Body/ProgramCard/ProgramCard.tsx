@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import LikeIcon from "../../General/LikeIcon/LikeIcon";
 import CardImageContainer from "./CardImageContainer";
 import React, { useEffect, useState, forwardRef } from "react";
+import { BiRightArrow } from "react-icons/bi";
 
 interface ProgramCardProps {
   program: Record<string, any>;
@@ -54,9 +55,9 @@ const ProgramCard = forwardRef(({ program }: ProgramCardProps, ref?: any) => {
         </span>
         {mouseOverCard && (
           <div className="image-overlay">
-            <button className=" bg-blockbusterYellow px-2 py-1 rounded-md text-sm">
-              <Link to={`/movies/${program.id}`}>Find out more</Link>
-            </button>
+            <Link to={`/movies/${program.id}`} className="card-button">
+              <span>Find out more</span>
+            </Link>
           </div>
         )}
       </div>
@@ -67,10 +68,6 @@ const ProgramCard = forwardRef(({ program }: ProgramCardProps, ref?: any) => {
           ({program.releaseYear})
         </span>
       </div>
-
-      {/* <div className="program_card-description">
-        {program.description.shortDescription}
-      </div> */}
     </div>
   );
 });

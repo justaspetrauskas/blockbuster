@@ -6,6 +6,7 @@ import wishlistReducer from "../slices/wishlistSlice";
 import moviesByGenreReducer from "../slices/moviesByGenreSlice";
 import lazyLoadSliceReducer from "../slices/lazyLoadSlice";
 import movieGenreReducer from "../slices/genresSlice";
+import HeaderStateReducer from "../slices/headerSlice";
 
 export const store = configureStore({
   reducer: {
@@ -16,6 +17,7 @@ export const store = configureStore({
     lazyLoad: lazyLoadSliceReducer,
     initialGenres: movieGenreReducer,
     filteredGenres: movieGenreReducer,
+    navBar: HeaderStateReducer,
   },
   // Adding the api middleware enables caching, invalidation, polling,
   middleware: (getDefaultMiddleware) =>
@@ -29,6 +31,10 @@ export const selectInitialGenres = (state: RootState) =>
   state.initialGenres.initialGenres;
 export const selectFilteredGenres = (state: RootState) =>
   state.filteredGenres.filteredGenres;
+
+export const selectSidebarState = (state: RootState) => state.navBar.sidebar;
+
+export const selectSubmenuState = (state: RootState) => state.navBar.submenu;
 
 // optional, but required for refetchOnFocus/refetchOnReconnect behaviors
 setupListeners(store.dispatch);

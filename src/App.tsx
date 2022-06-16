@@ -10,13 +10,13 @@ import {
   Route,
 } from "react-router-dom";
 
-import ErrorPage from "./pages/ErrorPage/ErrorPage";
-import SingleProgramPage from "./pages/SingleProgramPage/SingleProgram";
-import Wishlist from "./pages/Wishlist/Wishlist";
-import MoviesPage from "./pages/MoviePage/MoviesPage";
-import ProgramsByGenre from "./pages/GenrePage/GenrePage";
+// import ErrorPage from "./pages/ErrorPage/ErrorPage";
+// import SingleProgramPage from "./pages/SingleProgramPage/SingleProgram";
+// import Wishlist from "./pages/Wishlist/Wishlist";
+// import MoviesPage from "./pages/MoviePage/MoviesPage";
+// import ProgramsByGenre from "./pages/GenrePage/GenrePage";
 
-import ContentWrapper from "./components/General/ContentWrapper/ContentWrapper";
+// import ContentWrapper from "./components/General/ContentWrapper/ContentWrapper";
 
 import HeaderComponent from "./components/Header/HeaderComponent";
 import FooterComponent from "./components/Footer/Footer";

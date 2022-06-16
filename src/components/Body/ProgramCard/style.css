@@ -6,9 +6,8 @@
 
 /* image container */
 .program_card-image-wrapper {
-  @apply relative w-full rounded-md 
-  overflow-hidden delay-300 duration-500
-  lg:max-h-[18rem] md:max-h-[14rem] h-auto;
+  @apply relative h-full rounded-md 
+  overflow-hidden delay-300 duration-500;
 }
 
 .program_card:hover .program_card-image-wrapper {
@@ -22,12 +21,8 @@
 
 .image-overlay {
   @apply absolute top-0 left-0 w-full h-full
-  bg-gradient-to-t from-blockbusterPurple/40 to-blockbusterBlue/30 backdrop-blur-[1px]
+  bg-gradient-to-t  from-blockbusterBlue/90 backdrop-blur-[1px]
   flex items-center justify-center transition-opacity duration-300 opacity-0 hover:opacity-100;
-}
-
-.blockbuster-button {
-  @apply duration-500 backdrop-blur-sm bg-blockbusterYellow px-2 py-1 rounded-md text-sm;
 }
 
 .image-overlay:hover button {
@@ -57,18 +52,6 @@
    invisible;
 }
 
-/* .icon-like svg {
-  height: 1.5rem;
-  width: 1.5rem;
-  @apply fill-blockbusterYellow duration-300 ease-linear;
-}
-
-.icon-like svg:hover {
-  @apply fill-blockbusterYellow duration-300 ease-linear;
-} */
-
-/* content */
-
 .program_card-content {
   @apply text-center 
   mt-2
@@ -82,13 +65,23 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.program_card-button {
-  @apply bg-blockbusterYellow
-  
-  text-sm font-medium text-white
-  px-3 py-1
-  rounded-2xl;
+.card-button {
+  @apply w-[80%] border border-blockbusterYellow  px-4 py-1 rounded-lg  cursor-pointer duration-300
+  text-blockbusterBlue text-xs translate-y-full
+  flex flex-row items-center justify-between bg-blockbusterYellow/60;
+  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
-.program_card-button:hover {
-  @apply shadow-sm;
+
+/* .sidebar-link-wrapper {
+  @apply w-full border border-blockbusterYellow  px-4 py-1 rounded-lg  cursor-pointer duration-300
+   text-blockbusterBlue
+   flex flex-row items-center justify-between bg-blockbusterYellow/60;
+  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
+.sidebar-link-wrapper {
+  @apply capitalize;
+}
+.sidebar-link-wrapper:hover {
+  @apply bg-blockbusterBlue/80 text-blockbusterYellow duration-300 border border-blockbusterBlue pl-8;
+  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+} */

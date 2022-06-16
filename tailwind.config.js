@@ -5,6 +5,7 @@ module.exports = {
       colors: {
         blockbusterBlue: "#0A0A27",
         blockbusterYellow: "#FFE13F",
+        blockbusterLightYellow: "#FFE55C",
         blockbusterRose: "#b9485e",
         blockbusterPurple: "#7d315b",
       },

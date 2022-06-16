@@ -1,0 +1,31 @@
+.blockbuster-link {
+  @apply text-center overflow-hidden capitalize rounded-lg;
+  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.blockbuster-link > span {
+  transition: 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.blockbuster-link--primary {
+  @apply relative;
+}
+
+.blockbuster-link--primary:hover {
+  @apply bg-blockbusterLightYellow  ml-4;
+}
+
+.blockbuster-link--icon > i {
+  @apply absolute -left-[100%] top-0 h-full 
+    flex flex-col justify-center
+    origin-center opacity-0;
+  transition: 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+.blockbuster-link--icon:hover > i {
+  @apply left-5 opacity-100;
+  transition: 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.blockbuster-link--fullWidth {
+  @apply w-full py-1.5;
+}

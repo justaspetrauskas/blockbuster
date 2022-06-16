@@ -14,26 +14,20 @@ export interface CreditData {
   name: string;
 }
 
-export interface GeneralMovieData {
+export interface FullMovieData {
   id: string;
   title: string;
   description: {
     shortDescription?: string;
     longDescription?: string;
   };
-  poster: {
-    cardImageUrl?: string | null;
-  };
+
   runtime: string;
 
   releaseYear: number;
-  random?: any;
-}
-
-export interface FullMovieData extends GeneralMovieData {
   credits: CreditData[] | null;
   genre: string[];
-  imdbID: string;
+  imdbRating?: string;
   poster: {
     headerImageUrl: string | null;
     cardImageUrl?: string | null;

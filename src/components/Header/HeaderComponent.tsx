@@ -1,34 +1,25 @@
-import React, { useEffect, useState } from "react";
+// elements
 import { Link } from "react-router-dom";
-
-import { BsBookmarkHeart } from "react-icons/bs";
 import ContentWrapper from "../General/ContentWrapper/ContentWrapper";
-import "./style.css";
-import { useSelector } from "react-redux";
-import { selectWishlist } from "../../redux/store/store";
 import Sidebar from "./Sidebar/Sidebar";
+import { BsBookmarkHeart } from "react-icons/bs";
+
+// redux
+import { changeMenuState, closeMenu } from "../../redux/slices/headerSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { selectSidebarState } from "../../redux/store/store";
+
+// style
+import "./style.css";
+import Hamburger from "../General/Hamburger/Hamburger";
 
 const HeaderComponent = () => {
-  const wishlist = useSelector(selectWishlist);
-
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  //   console.log(pageId);
-
-  // useEffect(() => {
-  //   let body = document.getElementsByTagName("body")[0];
-  //   if (mobileMenuOpen) {
-  //     body.style.overflowY = "hidden";
-  //   } else {
-  //     body.style.overflowY = "visible";
-  //   }
-  // }, [mobileMenuOpen]);
+  const sidebarVisible = useSelector(selectSidebarState);
+  const dispatch = useDispatch();
 
   const handleOpenMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
-
-  const linkClick = () => {
-    setMobileMenuOpen(false);
+    dispatch(changeMenuState("sidebar"));
+    dispatch(closeMenu("submenu"));
   };
 
   return (
@@ -38,22 +29,13 @@ const HeaderComponent = () => {
           <div className="header-brand">
             <Link to={"/"}>Blockbuster</Link>
           </div>
-          <button
-            data-collapse-toggle="mobile-menu"
-            type="button"
-            className={`hamburger-menu ${
-              mobileMenuOpen ? "hamburger-open" : "hamburger-closed"
-            }`}
-            onClick={handleOpenMobileMenu}
-          >
-            <span className="burger-slice "></span>
-            <span className="burger-slice "></span>
-            <span className="burger-slice "></span>
-          </button>
+          <Hamburger
+            isOpen={sidebarVisible}
+            clickHandler={handleOpenMobileMenu}
+          />
         </div>
       </ContentWrapper>
-
-      <Sidebar isOpen={mobileMenuOpen} clickHandler={linkClick} />
+      <Sidebar />
     </header>
   );
 };

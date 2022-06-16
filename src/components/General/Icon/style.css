@@ -1,0 +1,15 @@
+.arrow-icon svg {
+  @apply text-inherit;
+}
+
+.arrow-icon--medium svg {
+  @apply h-6 w-6;
+}
+
+.arrow-icon--small svg {
+  @apply h-4 w-4;
+}
+
+.arrow-icon--large svg {
+  @apply h-7 w-7;
+}

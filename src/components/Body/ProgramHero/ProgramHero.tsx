@@ -31,7 +31,8 @@ const ProgramHero = ({
     >
       {gradient! && <div className="program-header--gradient"></div>}
       {/* trailer */}
-      {children && <div className="program-header--title">{children}</div>}
+      {/* {children && <div className="program-header--title">{children}</div>} */}
+      {children}
     </div>
   );
 };

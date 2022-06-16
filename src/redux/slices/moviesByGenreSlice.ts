@@ -1,5 +1,4 @@
-import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
-import { buildGeneralMovieData } from "../../utils/helpers/buildData";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const moviesByGenreUrl =
   "https://feed.entertainment.tv.theplatform.eu/f/jGxigC/bb-all-pas";
@@ -11,10 +10,6 @@ export const getMoviesByGenre = createAsyncThunk(
       moviesByGenreUrl +
         `?form=json&range=1-${requestParams.range_end}&fields=id,title,plprogram$descriptionLocalized,runtime,year,thumbnails&byTags=genre:${requestParams.genre}&byProgramType=movie&count=true`
     );
-    // let pageCount = response.totalResults;
-    // let data = await response.json().entries.map((movie) =>
-    //   buildGeneralMovieData(movie)
-    // );
     console.log("response", response);
     return response;
   }

@@ -8,10 +8,10 @@
   @apply bg-blockbusterYellow/80 rounded-l-lg  ml-4;
 }
 .wishlist-card--image {
-  @apply w-20 rounded-lg overflow-hidden h-full;
+  @apply w-12 md:w-20 rounded-lg overflow-hidden h-full;
 }
 .wishlist-card--content {
-  @apply ml-5 h-full flex flex-col space-y-6 justify-between items-start;
+  @apply ml-5 h-full flex flex-col space-y-2 md:space-y-6 justify-between items-start;
 }
 
 /* .sidebar-link-wrapper {
@@ -23,7 +23,7 @@
 
 .wishlist-card--link-button {
   @apply border border-blockbusterYellow  px-3 py-0.5 rounded-lg  cursor-pointer duration-300
-  text-blockbusterBlue text-sm
+  text-blockbusterBlue text-xs md:text-sm
   flex flex-row items-center justify-between bg-blockbusterYellow/60;
   transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }

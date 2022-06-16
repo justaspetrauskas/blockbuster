@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import {
   buildFullMovieData,
-  buildGeneralMovieData,
+  fetchImdbRating,
 } from "../../utils/helpers/buildData";
 
 // Define a service using a base URL and expected endpoints
@@ -29,9 +29,8 @@ export const blockbusterApi = createApi({
       }) => {
         // console.log("Received data", response);
         let pageCount = response.totalResults;
-        let data = response.entries.map((movie) =>
-          buildGeneralMovieData(movie)
-        );
+        console.log(response.entries);
+        let data = response.entries.map((movie) => buildFullMovieData(movie));
         return { data, pageCount };
       },
     }),
@@ -40,10 +39,14 @@ export const blockbusterApi = createApi({
         const { programId } = arg;
         return `/${programId}?form=json&fields=id,longDescription,ratings,tags,year,title,runtime,thumbnails,credits,description,tdc$imdbId,tdc$tvodProductAvailabilityLocalized,longDescriptionLocalized,descriptionLocalized`;
       },
-      transformResponse: (response: Record<string, any>) => {
+      transformResponse: async (response: Record<string, any>) => {
         delete response["$xmlns"];
         // group data into
+        // let imdbRating= await fetchImdbRating(response.)
+        let imdbRating = await fetchImdbRating(response.tdc$imdbId);
+
         let data = buildFullMovieData(response);
+        data.imdbRating = imdbRating;
 
         return data;
       },

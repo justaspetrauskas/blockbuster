@@ -8,9 +8,13 @@
 }
 .program-header--gradient {
   @apply h-full w-full top-0 left-0 absolute;
-  background-image: linear-gradient(0deg, #fcfcfc, transparent 40%);
+  background-image: linear-gradient(
+    0deg,
+    rgba(250, 254, 255, 1),
+    transparent 40%
+  );
   /* backdrop-filter: blur(2px); */
-  backdrop-filter: brightness(85%) blur(8px);
+  backdrop-filter: brightness(65%) blur(4px);
 }
 
 .program-header--title {

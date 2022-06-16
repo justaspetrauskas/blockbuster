@@ -2,32 +2,44 @@ import React from "react";
 import "./style.css";
 
 interface ButtonProps {
-  children?: React.ReactNode;
-  label: string;
+  children: React.ReactNode;
+
   primary?: boolean;
-  size?: "small" | "medium" | "large";
+  secondary?: boolean;
+  size?: "small" | "medium" | "large" | "fullWidth";
   backgroundColor?: string;
-  onClick?: () => void;
+  value?: string;
+  onClick?: (e?: any) => void;
 }
 
 const Button = ({
+  primary = false,
+  secondary = false,
   children,
-  size = "medium",
+  size = "fullWidth",
   backgroundColor,
-  label,
+
+  value,
   ...props
 }: ButtonProps) => {
+  const mode = primary
+    ? "blockbuster-button--primary"
+    : secondary
+    ? "blockbuster-button--secondary"
+    : "";
+
   return (
     <button
-      className={["blockbuster-button", `blockbuster-button--${size}`].join(
-        " "
-      )}
+      className={[
+        "blockbuster-button",
+        `blockbuster-button--${size}`,
+        mode,
+      ].join(" ")}
       style={{ backgroundColor }}
+      value={value}
       {...props}
     >
-      {children && <i className="blockbuster-button--icon">{children}</i>}
-
-      <span className="blockbuster-button--title">{label}</span>
+      {children}
     </button>
   );
 };

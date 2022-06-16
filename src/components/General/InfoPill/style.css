@@ -1,9 +1,10 @@
 .infopill {
-  @apply font-medium text-inherit;
+  @apply text-inherit 
+  lg:block flex flex-row gap-x-1 flex-wrap;
 }
 .infopill-title {
-  @apply font-semibold mr-1;
+  @apply font-semibold;
 }
 .infopill-content {
-  @apply font-normal mr-1;
+  @apply lg:mx-2 font-normal;
 }

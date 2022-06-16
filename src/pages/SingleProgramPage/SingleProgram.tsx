@@ -5,6 +5,7 @@ import ProgramHero from "../../components/Body/ProgramHero/ProgramHero";
 import ProgramEssentials from "../../components/Body/ProgramEssentials/ProgramEssentials";
 
 import { useGetProgramByIdQuery } from "../../redux/services/programs";
+import ProgramDescription from "../../components/Body/ProgramDescription/ProgramDescription";
 
 const SingleProgram = () => {
   // maybe check if it exist in the redux
@@ -26,10 +27,14 @@ const SingleProgram = () => {
         <div>Loading</div>
       ) : (
         data && (
-          <div>
-            <ProgramHero imageURL={data.poster.headerImageUrl} />
-            <ProgramEssentials data={data} />
-          </div>
+          <>
+            <ProgramHero imageURL={data.poster.headerImageUrl}>
+              <ProgramEssentials data={data} />
+            </ProgramHero>
+            <ProgramDescription
+              description={data.description.longDescription}
+            />
+          </>
         )
       )}
     </section>
