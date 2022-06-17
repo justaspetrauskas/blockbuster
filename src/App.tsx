@@ -20,6 +20,7 @@ import {
 
 import HeaderComponent from "./components/Header/HeaderComponent";
 import FooterComponent from "./components/Footer/Footer";
+import Loader from "./components/General/Loader/Loader";
 
 const LazyWishlist = lazy(() => import("./pages/Wishlist/Wishlist"));
 const LazyProgramsByGenre = lazy(() => import("./pages/GenrePage/GenrePage"));
@@ -40,7 +41,7 @@ function App() {
           <Route
             path="/movies"
             element={
-              <Suspense fallback={"loading component should be here"}>
+              <Suspense fallback={<Loader />}>
                 <LazyMoviesPage />
               </Suspense>
             }

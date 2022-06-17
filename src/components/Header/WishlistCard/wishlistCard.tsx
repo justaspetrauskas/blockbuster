@@ -4,6 +4,7 @@ import Button from "../../General/Button/Button";
 import { removeFromWishlist } from "../../../redux/slices/wishlistSlice";
 import "./style.css";
 import { useDispatch } from "react-redux";
+import { closeMenu } from "../../../redux/slices/headerSlice";
 interface WishlistCardProps {
   item: Record<string, any>;
   closeSubmenu: () => void;
@@ -12,7 +13,10 @@ const WishlistCard = ({ item, closeSubmenu }: WishlistCardProps) => {
   const dispatch = useDispatch();
 
   const handleCloseMenu = () => {
-    closeSubmenu();
+    dispatch(closeMenu("submenu"));
+    setTimeout(() => {
+      dispatch(closeMenu("sidebar"));
+    }, 400);
   };
 
   const removeFromTheWishlist = () => {

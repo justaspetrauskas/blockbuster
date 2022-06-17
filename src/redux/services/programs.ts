@@ -36,7 +36,7 @@ export const blockbusterApi = createApi({
     getProgramById: builder.query<Record<string, any>, { programId: string }>({
       query: (arg) => {
         const { programId } = arg;
-        return `/${programId}?form=json&fields=id,longDescription,ratings,tags,year,title,runtime,thumbnails,credits,description,tdc$imdbId,tdc$tvodProductAvailabilityLocalized,longDescriptionLocalized,descriptionLocalized`;
+        return `/${programId}?form=json&`;
       },
       transformResponse: async (response: Record<string, any>) => {
         delete response["$xmlns"];

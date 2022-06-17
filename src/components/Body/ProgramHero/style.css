@@ -1,5 +1,5 @@
 .program-header--hero-primary {
-  @apply h-heroSmall md:h-heroMedium lg:h-heroLarge relative overflow-hidden;
+  @apply h-heroSmall md:h-heroMedium lg:h-heroLarge relative overflow-hidden bg-fixed bg-cover;
   background-position: 50% 50% !important;
 }
 .program-header--hero-secondary {

@@ -1,0 +1,16 @@
+.credits-row {
+  @apply md:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 
+  lg:flex lg:overflow-hidden 
+  
+  
+  
+  py-8;
+}
+
+.credit-card {
+  @apply cursor-pointer whitespace-normal
+  
+  
+  
+  shadow-sm p-8 flex flex-col rounded-lg text-blockbusterBlue justify-center items-center;
+}

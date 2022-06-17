@@ -8,10 +8,10 @@
    /* md:gap-40; */;
 }
 .program-essentials--sumary {
-  @apply flex flex-col justify-center gap-1 md:gap-6 max-w-md xl:max-w-xl;
+  @apply flex flex-col justify-center gap-1 md:gap-3 max-w-md xl:max-w-xl;
 }
 .program-essentials--sumary-title {
-  @apply text-white md:leading-6 leading-3 max-w-md;
+  @apply text-white md:leading-6 leading-3 max-w-md mb-6;
 }
 .program-release-year {
   @apply px-1 text-[0.5rem] md:text-xl;
@@ -34,6 +34,9 @@
   @apply flex flex-row flex-nowrap py-2 mt-2 gap-[0.1rem] sm:gap-1;
 }
 
-.program-essentials--link {
-  @apply hover:text-blockbusterYellow;
+.program-essentials--link:hover {
+  @apply text-blockbusterYellow;
+}
+.program-essentials--link::after {
+  content: ", ";
 }

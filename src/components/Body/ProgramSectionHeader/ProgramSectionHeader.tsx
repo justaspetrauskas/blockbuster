@@ -16,12 +16,12 @@ const ProgramSectionHeader = ({
 }: ProgramSectionHeaderProps) => {
   return (
     <div className="section_header-wrapper">
-      <h1 className="section_header-title">{sectionTitle}</h1>
-      <div>
-        <span className="block mb-1 bg-blockbusterLightYellow px-4 rounded-lg border border-blockbusterYellow">
+      <div className="px-2 self-center">
+        <h1 className="section_header-title">{sectionTitle}</h1>
+        <span className="inline-block  text-left text-sm">
           In total: {itemCount}
         </span>
-        <span className="block mt-1 bg-blockbusterLightYellow px-4 rounded-lg border border-blockbusterYellow">
+        <span className="inline-block text-left text-sm ml-2">
           Showing: {showingCount}
         </span>
       </div>

@@ -6,14 +6,14 @@ import ProgramHero from "../../components/Body/ProgramHero/ProgramHero";
 import BottomObserver from "../../components/General/BottomObserver/BottomObserver";
 import Button from "../../components/General/Button/Button";
 import ContentWrapper from "../../components/General/ContentWrapper/ContentWrapper";
-import GridWrapper from "../../components/General/GridWrapper/GridWrapper";
+import GridWrapper from "../../components/General/ProgramRow/ProgramRow";
 import Loader from "../../components/General/Loader/Loader";
 import { useGetMoviesByGenreQuery } from "../../redux/services/programs";
 import { triggerLazyLoad } from "../../redux/slices/lazyLoadSlice";
 import { selectLazyLoad } from "../../redux/store/store";
 
 const LazyGridWrapper = lazy(
-  () => import("../../components/General/GridWrapper/GridWrapper")
+  () => import("../../components/General/ProgramRow/ProgramRow")
 );
 
 const GenrePage = () => {
@@ -56,18 +56,13 @@ const GenrePage = () => {
 
       <ContentWrapper size="screen">
         <div className="pb-24">
-          <Suspense fallback="...loading">
-            <LazyGridWrapper>
-              {data?.data.map((program: Record<string, any>) => {
-                return <ProgramCard program={program} key={program.id} />;
-              })}
-            </LazyGridWrapper>
-          </Suspense>
-          {!isLoading && (
-            <div className=" my-14 h-full w-full">
-              <Loader />
-            </div>
-          )}
+          <GridWrapper>
+            {data?.data.map((program: Record<string, any>) => {
+              return <ProgramCard program={program} key={program.id} />;
+            })}
+          </GridWrapper>
+
+          {!isLoading && <Loader />}
         </div>
         {rangeEnd >= data?.pageCount && (
           <div className="flex justify-center">

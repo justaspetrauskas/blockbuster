@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+import Container from "../../components/General/ContentWrapper/ContentWrapper";
+
 import ProgramHero from "../../components/Body/ProgramHero/ProgramHero";
 import ProgramEssentials from "../../components/Body/ProgramEssentials/ProgramEssentials";
 
 import { useGetProgramByIdQuery } from "../../redux/services/programs";
 import ProgramDescription from "../../components/Body/ProgramDescription/ProgramDescription";
+import Loader from "../../components/General/Loader/Loader";
+import MovieCredits from "../../components/Body/MovieCredits/MovieCredits";
 
 const SingleProgram = () => {
   // maybe check if it exist in the redux
@@ -22,18 +26,23 @@ const SingleProgram = () => {
   }, [data]);
 
   return (
-    <section className="relative md:mt-2">
+    <section className="relative md:mt-2 py-4 lg:py-8">
       {isLoading ? (
-        <div>Loading</div>
+        <div className="h-screen">
+          <Loader />
+        </div>
       ) : (
         data && (
           <>
             <ProgramHero imageURL={data.poster.headerImageUrl}>
               <ProgramEssentials data={data} />
             </ProgramHero>
-            <ProgramDescription
-              description={data.description.longDescription}
-            />
+            <Container size={"medium"}>
+              <ProgramDescription
+                description={data.description.longDescription}
+              />
+              <MovieCredits credits={data.credits} />
+            </Container>
           </>
         )
       )}

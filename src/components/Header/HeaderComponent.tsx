@@ -18,8 +18,10 @@ const HeaderComponent = () => {
   const dispatch = useDispatch();
 
   const handleOpenMobileMenu = () => {
-    dispatch(changeMenuState("sidebar"));
     dispatch(closeMenu("submenu"));
+    setTimeout(() => {
+      dispatch(changeMenuState("sidebar"));
+    }, 400);
   };
 
   return (

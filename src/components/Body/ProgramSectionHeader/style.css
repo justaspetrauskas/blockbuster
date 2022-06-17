@@ -21,8 +21,8 @@
 }
 
 .section_header-title {
-  @apply text-2xl
-  capitalize px-8 py-3;
+  @apply text-4xl
+  capitalize  py-3;
 }
 
 .section_header-link {

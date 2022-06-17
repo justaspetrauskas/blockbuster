@@ -25,6 +25,7 @@ export const fetchImdbRating = async (imdbID: string) => {
 };
 
 export const buildCreditData = (data: Record<string, any>) => {
+  console.log(data);
   if (data.plprogram$credits) {
     let creditData: CreditData[] = data.plprogram$credits?.map(
       (c: Record<string, any>) => ({

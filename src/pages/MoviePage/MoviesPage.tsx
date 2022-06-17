@@ -1,23 +1,12 @@
 import React, { lazy, Suspense } from "react";
+import { useSelector } from "react-redux";
 import ProgramSection from "../../components/Body/ProgramSection/ProgramSection";
 import ContentWrapper from "../../components/General/ContentWrapper/ContentWrapper";
-// const LazyProgramSection = lazy(
-//   () => import("../../components/Body/ProgramSection/ProgramSection")
-// );
-
-const genres = [
-  "action",
-  "comedy",
-  "thriller",
-  "war",
-  "romance",
-  "drama",
-  "crime",
-  "documentary",
-  "horror",
-];
+import { selectInitialGenres } from "../../redux/store/store";
 
 const MoviesPage = () => {
+  const genres = useSelector(selectInitialGenres);
+
   return (
     <section id="movies" className="md:pt-14">
       <ContentWrapper size="screen">

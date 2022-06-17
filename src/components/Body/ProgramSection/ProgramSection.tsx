@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useGetMoviesByGenreQuery } from "../../../redux/services/programs";
 import Button from "../../General/Button/Button";
-import GridWrapper from "../../General/GridWrapper/GridWrapper";
+import ProgramRow from "../../General/ProgramRow/ProgramRow";
+import Loader from "../../General/Loader/Loader";
 import ProgramCard from "../ProgramCard/ProgramCard";
 import ProgramSectionHeader from "../ProgramSectionHeader/ProgramSectionHeader";
 
@@ -36,13 +37,13 @@ const ProgramSection = ({ name }: ProgramSectionProps) => {
         />
       )}
 
-      <GridWrapper>
+      <ProgramRow>
         {data &&
           data.data.map((program: Record<string, any>, index: number) => (
             <ProgramCard program={program} key={index} />
           ))}
-      </GridWrapper>
-      {isLoading && <div>is loading...</div>}
+      </ProgramRow>
+      {isLoading && <Loader />}
       <div className="flex justify-center mt-4">
         <Button size={"large"} secondary onClick={handleLoadMore}>
           LoadMore

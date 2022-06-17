@@ -5,8 +5,8 @@ interface GridWrapperProps {
   children: React.ReactNode;
 }
 
-const GridWrapper = ({ children }: GridWrapperProps) => {
+const ProgramRow = ({ children }: GridWrapperProps) => {
   return <div className="grid-wrapper overflow-visible">{children}</div>;
 };
 
-export default GridWrapper;
+export default ProgramRow;

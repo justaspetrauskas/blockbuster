@@ -18,7 +18,7 @@ const ProgramHero = ({
 }: ProgramHeorProps) => {
   return (
     <div
-      className={`program-header--hero-${primary ? "primary" : "secondary"}`}
+      className={`program-header--hero-${primary ? "primary" : "secondary"} `}
       style={
         imageURL
           ? {

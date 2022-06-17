@@ -79,7 +79,6 @@ const ProgramEssentials = ({ data }: ProgramEssentialsProps) => {
                     key={index}
                     className="program-essentials--link"
                   >
-                    {index > 0 && ", "}
                     {genre}
                   </Link>
                 ))}
