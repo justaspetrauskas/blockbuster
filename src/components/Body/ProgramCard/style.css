@@ -1,6 +1,6 @@
 .program_card {
-  @apply max-w-sm relative bg-transparent 
-   flex flex-col justify-between sm:py-2 py-1 
+  @apply lg:max-w-sm relative bg-transparent 
+   flex flex-col justify-between
    text-blockbusterBlue cursor-pointer;
 }
 

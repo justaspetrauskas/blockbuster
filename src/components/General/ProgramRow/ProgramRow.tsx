@@ -6,7 +6,7 @@ interface GridWrapperProps {
 }
 
 const ProgramRow = ({ children }: GridWrapperProps) => {
-  return <div className="grid-wrapper overflow-visible">{children}</div>;
+  return <div className="grid-wrapper ">{children}</div>;
 };
 
 export default ProgramRow;
