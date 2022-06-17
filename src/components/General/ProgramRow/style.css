@@ -1,6 +1,6 @@
 .grid-wrapper {
   @apply overflow-y-visible space-x-4 py-4
-grid  md:grid-cols-4 xl:grid-cols-7 
+grid grid-cols-2 md:grid-cols-4 xl:grid-cols-7 
 
    md:gap-4;
 }
